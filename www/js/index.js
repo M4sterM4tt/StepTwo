@@ -18,10 +18,10 @@ var playerImagesX;
 var playerImagesY;
 
 // Rules
-window.screen.lockOrientation('landscape');
+screen.orientation.lock('landscape');
 
 // Event Listeners
-window.addEventListener('deviceorientation', handleOrientation);
+window.addEventListener('deviceorientation', Orientation);
 
 
 window.onload = function() {
@@ -56,9 +56,9 @@ window.onload = function() {
 
 
 
-function handleOrientation(event) {
-	playerImagesX[1] = event.gamma;  // In degree in the range [-180,180]
-	playerImagesY[1] = event.beta; // In degree in the range [-90,90]
+function Orientation(event) {
+	playerImagesX[1] = event.gamma;
+	playerImagesY[1] = event.beta;
 
 	// Because we don't want to have the device upside down
 	// We constrain the x value to the range [-90,90]
