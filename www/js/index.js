@@ -17,8 +17,6 @@ var playerImages;
 var playerImagesX;
 var playerImagesY;
 
-// Rules
-screen.orientation.lock('landscape');
 
 // Event Listeners
 window.addEventListener('deviceorientation', Orientation);
