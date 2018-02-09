@@ -23,9 +23,6 @@ var playerAccelerationY;
 //var enemyPositionX;
 //var enemyPositionY;
 
-// Event Listeners
-window.addEventListener('deviceorientation', Orientation);
-
 
 window.onload = function() {
 	
@@ -60,12 +57,10 @@ window.onload = function() {
 }
 
 
-
-
 function Orientation(event) {
 	
-	playerAccelerationX = event.beta;
-	playerAccelerationY = -event.gamma;
+	playerAccelerationX = (1/2)*event.beta;
+	playerAccelerationY = (-1/2)*event.gamma;
 	playerPositionX[1] = playerPositionX[1] + playerAccelerationX;
 	playerPositionY[1] = playerPositionY[1] + playerAccelerationY;
 	
@@ -86,7 +81,27 @@ function Orientation(event) {
 }
 
 
+function Movement(event) {
+	playerPositionX[1] = playerPositionX[1] + playerAccelerationX;
+	playerPositionY[1] = playerPositionY[1] + playerAccelerationY;
+	
+	if (playerPositionX[1] >  canvas.width || playerPositionX[1] < 0) {playerPositionX[1] =  canvas.width/2}
+	if (playerPositionY[1] >  canvas.height || playerPositionY[1] < 0) {playerPositionY[1] =  canvas.height/2}
+
+	
+	body.beginPath();
+	body.clearRect(0,0,canvas.width,canvas.height);
+	body.drawImage(level,0,0,canvas.width,canvas.height);
+	
+	body.beginPath();
+	body.drawImage(otherAssets[0],playerPositionX[0],playerPositionY[0],canvas.width/10,canvas.width/10);	
+	
+	body.beginPath();
+	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/20,canvas.width/20);
+}
 
 
-
+// Event Listeners
+window.addEventListener('deviceorientation', Orientation);
+window.addEventListener(playerAccelerationX != 0 || playerAccelerationY != 0, Movement);
 
