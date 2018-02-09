@@ -70,8 +70,8 @@ function Orientation(event) {
 	playerPositionY[1] = playerPositionY[1] + playerAccelerationY;
 	
 	
-	if (playerPositionX[1] >  canvas.width || playerPositionX[1] > 0) {playerPositionX[1] =  canvas.width/2}
-	if (playerPositionY[1] >  canvas.height || playerPositionY[1] > 0) {playerPositionY[1] =  canvas.height/2}
+	if (playerPositionX[1] >  canvas.width || playerPositionX[1] < 0) {playerPositionX[1] =  canvas.width/2}
+	if (playerPositionY[1] >  canvas.height || playerPositionY[1] < 0) {playerPositionY[1] =  canvas.height/2}
 
 	
 	body.beginPath();
