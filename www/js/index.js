@@ -63,12 +63,12 @@ window.onload = function() {
 
 function Orientation(event) {
 	
-	playerAccelerationX = (1/20)*event.beta;
-	playerAccelerationY = (-1/20)*event.gamma;
+	playerAccelerationX = (1/40)*event.beta;
+	playerAccelerationY = (-1/40)*event.gamma;
 	playerVelocityX = playerVelocityX + playerAccelerationX;
 	playerVelocityY = playerVelocityY + playerAccelerationY;
-	playerPositionX[1] = playerPositionX[1] + (1/2)*playerVelocityX;
-	playerPositionY[1] = playerPositionY[1] + (1/2)*playerVelocityY;
+	playerPositionX[1] = playerPositionX[1] + (1/4)*playerVelocityX;
+	playerPositionY[1] = playerPositionY[1] + (1/4)*playerVelocityY;
 	
 	
 	if (playerPositionX[1] >  canvas.width || playerPositionX[1] < 0) {playerPositionX[1] =  canvas.width/2}
@@ -89,8 +89,8 @@ function Orientation(event) {
 
 
 function Movement(event) {
-	playerPositionX[1] = playerPositionX[1] + (1/2)*playerVelocityX;
-	playerPositionY[1] = playerPositionY[1] + (1/2)*playerVelocityY;
+	playerPositionX[1] = playerPositionX[1] + (1/4)*playerVelocityX;
+	playerPositionY[1] = playerPositionY[1] + (1/4)*playerVelocityY;
 	
 	if (playerPositionX[1] >  canvas.width || playerPositionX[1] < 0) {playerPositionX[1] =  canvas.width/2}
 	if (playerPositionY[1] >  canvas.height || playerPositionY[1] < 0) {playerPositionY[1] =  canvas.height/2}
