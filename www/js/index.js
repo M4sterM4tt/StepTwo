@@ -16,6 +16,8 @@ var otherAssets;
 // Location Variables
 var playerPositionX;
 var playerPositionY;
+var playerVelocityX;
+var playerVelocityY;
 var playerAccelerationX;
 var playerAccelerationY;
 
@@ -40,6 +42,8 @@ window.onload = function() {
 	// Location Variables
 	playerPositionX = [canvas.width/4,canvas.width/2];
 	playerPositionY = [canvas.width/4,canvas.width/2];
+	playerVelocityX = 0;
+	playerVelocityY = 0;
 	playerAccelerationX = 0;
 	playerAccelerationY = 0;
 	
@@ -61,8 +65,10 @@ function Orientation(event) {
 	
 	playerAccelerationX = (1/2)*event.beta;
 	playerAccelerationY = (-1/2)*event.gamma;
-	playerPositionX[1] = playerPositionX[1] + playerAccelerationX;
-	playerPositionY[1] = playerPositionY[1] + playerAccelerationY;
+	playerVelocityX = playerVelocityX + playerAccelerationX;
+	playerVelocityY = playerVelocityY + playerAccelerationY;
+	playerPositionX[1] = playerPositionX[1] + playerVelocityX;
+	playerPositionY[1] = playerPositionY[1] + playerVelocityY;
 	
 	
 	if (playerPositionX[1] >  canvas.width || playerPositionX[1] < 0) {playerPositionX[1] =  canvas.width/2}
@@ -82,8 +88,8 @@ function Orientation(event) {
 
 
 function Movement(event) {
-	playerPositionX[1] = playerPositionX[1] + playerAccelerationX;
-	playerPositionY[1] = playerPositionY[1] + playerAccelerationY;
+	playerPositionX[1] = playerPositionX[1] + playerVelocityX;
+	playerPositionY[1] = playerPositionY[1] + playerVelocityY;
 	
 	if (playerPositionX[1] >  canvas.width || playerPositionX[1] < 0) {playerPositionX[1] =  canvas.width/2}
 	if (playerPositionY[1] >  canvas.height || playerPositionY[1] < 0) {playerPositionY[1] =  canvas.height/2}
