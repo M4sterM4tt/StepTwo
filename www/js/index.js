@@ -69,20 +69,18 @@ function Orientation(event) {
 	playerPositionX[1] = playerPositionX[1] + playerAccelerationX;
 	playerPositionY[1] = playerPositionY[1] + playerAccelerationY;
 	
-	
-	
-	
-	
+	if (playerPositionX[1] >  canvas.width || playerPositionX[1] > 0) {playerPositionX[1] =  canvas.width/2}
+	if (playerPositionY[1] >  canvas.height || playerPositionY[1] > 0) {playerPositionY[1] =  canvas.height/2}
 	
 	
 	// Because we don't want to have the device upside down
 	// We constrain the x value to the range [-90,90]
-	if (playerPositionX[1] >  90) {playerPositionX[0] =  90};
-	if (playerPositionX[1] < -90) {playerPositionX[0] = -90};
+	if (playerAccelerationX >  90) {playerAccelerationX =  90};
+	if (playerAccelerationX < -90) {playerAccelerationX = -90};
 
 	// To make computation easier we shift the range of x and y to [0,180]
-	playerPositionX[1] += 90;
-	playerPositionY[1] += 90;
+	playerAccelerationX += 90;
+	playerAccelerationY += 90;
 	
 	body.beginPath();
 	body.clearRect(0,0,canvas.width,canvas.height);
