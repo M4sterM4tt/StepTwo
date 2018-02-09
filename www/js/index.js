@@ -72,22 +72,22 @@ function Orientation(event) {
 	playerPositionY[1] = playerPositionY[1] + (1/4)*playerVelocityY;
 	
 	
-	if (playerPositionX[1] >  canvas.width) {
-		playerPositionX[1] =  canvas.width;
+	if (playerPositionX[1] >  canvas.width - (1/20)*canvas.width) {
+		playerPositionX[1] =  canvas.width - (1/20)*canvas.width;
 		playerVelocityX[1] =  0;
 	}
-	else if (playerPositionX[1] < canvas.width/20) {
-		playerPositionX[1] =  canvas.width/20;
+	else if (playerPositionX[1] < 0) {
+		playerPositionX[1] =  0;
 		playerVelocityX[1] =  0;
 	}
 	
 	
-	if (playerPositionY[1] >  canvas.height) {
-		playerPositionY[1] =  canvas.height;
+	if (playerPositionY[1] >  canvas.height - (1/20)*canvas.height) {
+		playerPositionY[1] =  canvas.height - (1/20)*canvas.height;
 		playerVelocityY[1] =  0;
 	}
-	else if (playerPositionY[1] < canvas.height/20) {
-		playerPositionY[1] =  canvas.height/20;
+	else if (playerPositionY[1] < 0) {
+		playerPositionY[1] =  0;
 		playerVelocityY[1] =  0;
 	}
 	
@@ -110,22 +110,22 @@ function Movement(event) {
 	playerPositionY[1] = playerPositionY[1] + (1/4)*playerVelocityY;
 	
 	
-	if (playerPositionX[1] >  canvas.width) {
-		playerPositionX[1] =  canvas.width;
+	if (playerPositionX[1] >  canvas.width - (1/20)*canvas.width) {
+		playerPositionX[1] =  canvas.width - (1/20)*canvas.width;
 		playerVelocityX[1] =  0;
 	}
-	else if (playerPositionX[1] < canvas.width/20) {
-		playerPositionX[1] =  canvas.width/20;
+	else if (playerPositionX[1] < 0) {
+		playerPositionX[1] =  0;
 		playerVelocityX[1] =  0;
 	}
 	
 	
-	if (playerPositionY[1] >  canvas.height) {
-		playerPositionY[1] =  canvas.height;
+	if (playerPositionY[1] >  canvas.height - (1/20)*canvas.height) {
+		playerPositionY[1] =  canvas.height - (1/20)*canvas.height;
 		playerVelocityY[1] =  0;
 	}
-	else if (playerPositionY[1] < canvas.height/20) {
-		playerPositionY[1] =  canvas.height/20;
+	else if (playerPositionY[1] < 0) {
+		playerPositionY[1] =  0;
 		playerVelocityY[1] =  0;
 	}
 	
