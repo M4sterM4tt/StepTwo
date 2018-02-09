@@ -82,8 +82,8 @@ function Orientation(event) {
 	}
 	
 	
-	if (playerPositionY[1] >  canvas.height - (1/20)*canvas.height) {
-		playerPositionY[1] =  canvas.height - (1/20)*canvas.height;
+	if (playerPositionY[1] >  canvas.height - (1/10)*canvas.height) {
+		playerPositionY[1] =  canvas.height - (1/10)*canvas.height;
 		playerVelocityY[1] =  0;
 	}
 	else if (playerPositionY[1] < 0) {
@@ -120,8 +120,8 @@ function Movement(event) {
 	}
 	
 	
-	if (playerPositionY[1] >  canvas.height - (1/20)*canvas.height) {
-		playerPositionY[1] =  canvas.height - (1/20)*canvas.height;
+	if (playerPositionY[1] >  canvas.height - (1/10)*canvas.height) {
+		playerPositionY[1] =  canvas.height - (1/10)*canvas.height;
 		playerVelocityY[1] =  0;
 	}
 	else if (playerPositionY[1] < 0) {
