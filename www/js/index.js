@@ -63,8 +63,8 @@ window.onload = function() {
 
 function Orientation(event) {
 	
-	playerAccelerationX = (1/2)*event.beta;
-	playerAccelerationY = (-1/2)*event.gamma;
+	playerAccelerationX = (1/4)*event.beta;
+	playerAccelerationY = (-1/4)*event.gamma;
 	playerVelocityX = playerVelocityX + playerAccelerationX;
 	playerVelocityY = playerVelocityY + playerAccelerationY;
 	playerPositionX[1] = playerPositionX[1] + playerVelocityX;
