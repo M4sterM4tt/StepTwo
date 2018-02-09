@@ -85,7 +85,6 @@ function Orientation(event) {
 	body.beginPath();
 	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/20,canvas.width/20);
 	
-	document.getElementById('test').innerHTML = playerAccelerationX + ", " + playerAccelerationY
 }
 
 
@@ -111,4 +110,4 @@ function Movement(event) {
 
 // Event Listeners
 window.addEventListener('deviceorientation', Orientation);
-window.addEventListener(playerAccelerationX != 0 || playerAccelerationY != 0, Movement);
+window.addEventListener(playerVelocityX != 0 || playerVelocityY != 0, Movement);
