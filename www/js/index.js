@@ -54,18 +54,32 @@ window.onload = function() {
 	body.drawImage(level,0,0,canvas.width,canvas.height);
 	
 	body.beginPath();
-	body.drawImage(otherAssets[0],playerPositionX[0],playerPositionY[0],canvas.width/10,canvas.width/10);	
+	body.drawImage(otherAssets[0],playerPositionX[0],playerPositionY[0],canvas.width/20,canvas.width/20);	
 	
 	body.beginPath();
-	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/10,canvas.width/10);	
+	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/20,canvas.width/20);	
 }
 
 
 function Orientation(event) {
 	
 	
-	playerAccelerationX = (1/40)*event.beta;
+	if (playerAccelerationX/playerAccelerationX == event.beta/event.beta) {
+		playerAccelerationX = (1/40)*event.beta;
+	}
+	else {
+		playerAccelerationX = (1/80)*event.beta;
+	}
+	
+	
+	if (playerAccelerationY/playerAccelerationY == event.gamma/event.gamma) {
 	playerAccelerationY = (-1/40)*event.gamma;
+	}
+	else {
+		playerAccelerationY = (-1/80)*event.gamma;
+	}
+	
+	
 	playerVelocityX = playerVelocityX + playerAccelerationX;
 	playerVelocityY = playerVelocityY + playerAccelerationY;
 	playerPositionX[1] = playerPositionX[1] + (1/4)*playerVelocityX;
@@ -97,7 +111,7 @@ function Orientation(event) {
 	body.drawImage(level,0,0,canvas.width,canvas.height);
 	
 	body.beginPath();
-	body.drawImage(otherAssets[0],playerPositionX[0],playerPositionY[0],canvas.width/10,canvas.width/10);	
+	body.drawImage(otherAssets[0],playerPositionX[0],playerPositionY[0],canvas.width/20,canvas.width/20);	
 	
 	body.beginPath();
 	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/20,canvas.width/20);
@@ -106,26 +120,31 @@ function Orientation(event) {
 
 
 function Movement(event) {
+
 	playerPositionX[1] = playerPositionX[1] + (1/4)*playerVelocityX;
 	playerPositionY[1] = playerPositionY[1] + (1/4)*playerVelocityY;
 	
 	
 	if (playerPositionX[1] >  canvas.width - (1/20)*canvas.width) {
 		playerPositionX[1] =  canvas.width - (1/20)*canvas.width;
-		playerVelocityX[1] =  0;
+		playerVelocityX =  0;
+		playerVelocityY =  0;
 	}
 	else if (playerPositionX[1] < 0) {
 		playerPositionX[1] =  0;
-		playerVelocityX[1] =  0;
+		playerVelocityX =  0;
+		playerVelocityY =  0;
 	}
 	
 	
 	if (playerPositionY[1] >  canvas.height - (1/10)*canvas.height) {
 		playerPositionY[1] =  canvas.height - (1/10)*canvas.height;
+		playerVelocityX =  0;
 		playerVelocityY[1] =  0;
 	}
 	else if (playerPositionY[1] < 0) {
 		playerPositionY[1] =  0;
+		playerVelocityX =  0;
 		playerVelocityY[1] =  0;
 	}
 	
