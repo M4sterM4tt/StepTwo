@@ -120,6 +120,7 @@ function Orientation(event) {
 	body.beginPath();
 	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/20,canvas.width/20);
 	
+	
 }
 
 
@@ -162,9 +163,11 @@ function Movement(event) {
 	
 	body.beginPath();
 	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/20,canvas.width/20);
+	
+
 }
 
 
 // Event Listeners
 window.addEventListener('deviceorientation', Orientation);
-window.addEventListener(playerVelocityX != 0 || playerVelocityY != 0, Movement);
+window.addEventListener(event.beta =< 1 && event.beta => -1 || event.gamma =< 1 && event.gamma => -1, Movement);
