@@ -170,4 +170,4 @@ function Movement(event) {
 
 // Event Listeners
 window.addEventListener('deviceorientation', Orientation);
-window.addEventListener(event.beta =< 1 && event.beta => -1 || event.gamma =< 1 && event.gamma => -1, Movement);
+window.addEventListener(event.beta <= 1 && event.beta >= -1 || event.gamma <= 1 && event.gamma >= -1, Movement);
