@@ -86,6 +86,13 @@ function Orientation(event) {
 	playerPositionY[1] = playerPositionY[1] + (1/4)*playerVelocityY;
 	
 	
+	if (playerPositionX[1] >= playerPositionX[0] && playerPositionX[1] <= playerPositionX[0] || playerPositionY[1] >= playerPositionY[0] && playerPositionY[1] <= playerPositionY[0]) {
+		alert ("GOALLLLLLL!!!!!!!")
+		playerPositionX[0] = canvas.width - playerPositionX[0];
+		playerPositionY[0] = canvas.height - playerPositionY[0];
+	}
+	
+	
 	if (playerPositionX[1] >  canvas.width - (1/20)*canvas.width) {
 		playerPositionX[1] =  canvas.width - (1/20)*canvas.width;
 		playerVelocityX =  (-1/4)*playerVelocityX;
@@ -128,6 +135,13 @@ function Movement(event) {
 
 	playerPositionX[1] = playerPositionX[1] + (1/4)*playerVelocityX;
 	playerPositionY[1] = playerPositionY[1] + (1/4)*playerVelocityY;
+	
+	
+	if (playerPositionX[1] >= playerPositionX[0] && playerPositionX[1] <= playerPositionX[0] || playerPositionY[1] >= playerPositionY[0] && playerPositionY[1] <= playerPositionY[0]) {
+		alert ("GOALLLLLLL!!!!!!!")
+		playerPositionX[0] = canvas.width - playerPositionX[0];
+		playerPositionY[0] = canvas.height - playerPositionY[0];
+	}
 	
 	
 	if (playerPositionX[1] >  canvas.width - (1/20)*canvas.width) {
