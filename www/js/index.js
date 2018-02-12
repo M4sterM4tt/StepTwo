@@ -88,21 +88,25 @@ function Orientation(event) {
 	
 	if (playerPositionX[1] >  canvas.width - (1/20)*canvas.width) {
 		playerPositionX[1] =  canvas.width - (1/20)*canvas.width;
-		playerVelocityX[1] =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY =  (-1/4)*playerVelocityY;
 	}
 	else if (playerPositionX[1] < 0) {
 		playerPositionX[1] =  0;
-		playerVelocityX[1] =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY =  (-1/4)*playerVelocityY;
 	}
 	
 	
 	if (playerPositionY[1] >  canvas.height - (1/10)*canvas.height) {
 		playerPositionY[1] =  canvas.height - (1/10)*canvas.height;
-		playerVelocityY[1] =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY =  (-1/4)*playerVelocityY;
 	}
 	else if (playerPositionY[1] < 0) {
 		playerPositionY[1] =  0;
-		playerVelocityY[1] =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY =  (-1/4)*playerVelocityY;
 	}
 	
 	
@@ -127,25 +131,25 @@ function Movement(event) {
 	
 	if (playerPositionX[1] >  canvas.width - (1/20)*canvas.width) {
 		playerPositionX[1] =  canvas.width - (1/20)*canvas.width;
-		playerVelocityX =  0;
-		playerVelocityY =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY =  (-1/4)*playerVelocityY;
 	}
 	else if (playerPositionX[1] < 0) {
 		playerPositionX[1] =  0;
-		playerVelocityX =  0;
-		playerVelocityY =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY =  (-1/4)*playerVelocityY;
 	}
 	
 	
 	if (playerPositionY[1] >  canvas.height - (1/10)*canvas.height) {
 		playerPositionY[1] =  canvas.height - (1/10)*canvas.height;
-		playerVelocityX =  0;
-		playerVelocityY[1] =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY[1] =  (-1/4)*playerVelocityY;
 	}
 	else if (playerPositionY[1] < 0) {
 		playerPositionY[1] =  0;
-		playerVelocityX =  0;
-		playerVelocityY[1] =  0;
+		playerVelocityX =  (-1/4)*playerVelocityX;
+		playerVelocityY[1] =  (-1/4)*playerVelocityY;
 	}
 	
 	
@@ -154,7 +158,7 @@ function Movement(event) {
 	body.drawImage(level,0,0,canvas.width,canvas.height);
 	
 	body.beginPath();
-	body.drawImage(otherAssets[0],playerPositionX[0],playerPositionY[0],canvas.width/10,canvas.width/10);	
+	body.drawImage(otherAssets[0],playerPositionX[0],playerPositionY[0],canvas.width/20,canvas.width/20);	
 	
 	body.beginPath();
 	body.drawImage(otherAssets[1],playerPositionX[1],playerPositionY[1],canvas.width/20,canvas.width/20);
